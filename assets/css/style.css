@@ -1,0 +1,48 @@
+.container {
+    padding-right: 45px;
+}
+.list {
+    padding-left: 45px;
+}
+.add{
+    padding:2px 6px;
+    background: #3258d4;
+    color:#fff;
+    border-radius: 2px
+}
+#myUL li{
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 1px solid #e2d0d0;
+}
+
+#myUL li:hover{
+    color: #f9b619;
+    border-bottom: 2px solid #000;
+}
+
+span.span1{
+    opacity: 0;
+}
+.donebtn {
+    opacity: 0;
+}
+.deletebtn{
+    opacity: 0;
+}
+li:hover span.span1 {
+    opacity: 1;
+}
+li:hover button.donebtn {
+    background: none;
+    border: none;
+    color: #33d246;
+    opacity: 1;
+    padding-left: 78%;
+}
+li:hover button.deletebtn {
+    background: none;
+    border: none;
+    color: #e91010;
+    opacity: 1;
+}
