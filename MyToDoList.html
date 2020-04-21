@@ -11,35 +11,74 @@
             <div class="container">
                 <div class="list">
                    <h1> My To-do's List </h1>
-                    <input type="text"  placeholder="New Task..." class=""  >
-                    <span onclick="newElement()" class="add"> Add to List</span>
+                    <input type="text"  placeholder="New Task..." class="" id="name"  >
+                    <span class="add" id="addto"> Add to List</span>
                 </div>
                 <ul id="myUL">
-                    <li>
+                    <li id="myli">
                         Learn HTML
                         <button  class="donebtn">Mark as Done</button>
                         <span class="span1"> | </span>
-                        <button  class="deletebtn">Delete</button>                           
+                        <button  class="deletebtn" id="dele">Delete</button>                           
                     </li>
-                    <li>
+                    <li id="myli" >
                         Learn CSS
-                        <button  class="donebtn">Mark as Done</button>
+                        <button  class="donebtn" id="done">Mark as Done</button>
                         <span class="span1"> | </span>
-                        <button  class="deletebtn">Delete</button>
+                        <button  class="deletebtn" id="delet" id="dele">Delete</button>
                     </li>
-                    <li>
+                    <li id="myli">
                         Learn JavaScript
                         <button  class="donebtn">Mark as Done</button>
                         <span class="span1"> | </span>
-                        <button  class="deletebtn">Delete</button>
+                        <button  class="deletebtn" id="dele">Delete</button>
                     </li>
-                    <li>
+                    <li id="myli">
                         Learn PHP
                         <button  class="donebtn">Mark as Done</button>
                         <span class="span1"> | </span>
-                        <button  class="deletebtn">Delete</button>
+                        <button  class="deletebtn" id="dele">Delete</button>
                     </li>
                 </ul>    
             </div>
+
+            <script>
+
+                var button = document.getElementById('dele');
+                var deletebtn = document.getElementsByClassName("deletebtn");
+            
+                button.addEventListener("click", function(){
+                    for ( var i = 0; i < deletebtn.length; i++) {
+                    var dele = this.parentElement;
+                    dele.style.display = "none";
+                    }
+                })
+ 
+                var input = document.getElementById('name');
+                var span = document.getElementById('addto');
+                var li = document.getElementsByTagName('li');
+                var li = document.getElementById('myli');
+
+                span.addEventListener("click", function(){
+                    var li = document.createElement("li");
+                    var inputValue = document.getElementById("name").value;
+                    var t = document.createTextNode(inputValue);
+                    li.appendChild(t);
+                
+                    document.getElementById("myUL").appendChild(li);
+                    document.getElementById("name").value = "";
+
+                    var span = document.createElement("SPAN");
+                    var x =  document.getElementsByClassName("donebtn").value;
+                    var txt = document.createTextNode("x");
+                    li.appendChild(x);
+                    document.getElementById("myUL").appendChild(txt);
+                    document.getElementById("donebtn").value = "";
+                    span.appendChild(txt);
+                    li.appendChild(span);
+
+            
+                })
+            </script>
         </body>  
     </html>      
